@@ -26,6 +26,6 @@ pkgver() {
 
 package() {
     cd ${_gitname}
-    install -D "${_gitname}" "${pkgdir}/usr/bin/${_gitname}"
+    install -D "vantage" "${pkgdir}/usr/bin/vantage"
     install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/${_gitname}/LICENSE"
 }
