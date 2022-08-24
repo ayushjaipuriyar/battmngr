@@ -321,7 +321,7 @@ function read_operation() {
 function read_charge_operation() {
 	# rapid charge check
 	echo '\_SB.PCI0.LPC0.EC0.FCGM' >/proc/acpi/call
-	check=$(cat /proc/acpi/call | cut -d '' -f1)
+	check=$(cut -d '' -f1 </proc/acpi/call)
 
 	case $check in
 
@@ -340,7 +340,7 @@ function read_charge_operation() {
 
 	# battery conservation check
 	echo '\_SB.PCI0.LPC0.EC0.BTSG' >/proc/acpi/call
-	check=$(cat /proc/acpi/call | cut -d '' -f1)
+	check=$(cut -d '' -f1 </proc/acpi/call)
 
 	case $check in
 

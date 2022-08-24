@@ -1,7 +1,8 @@
 # Maintainer: Ayush Jaipuriyar <ayushjaipuriyar21@gmail.com>
 pkgname=vantage-14are05-git
 _gitname=vantage-14are05
-pkgver=22__2022.08.24
+_name=vantage
+pkgver=26__2022.08.24
 pkgrel=1
 pkgdesc="Battery manager to handle system performance modes and charge modes 
         through acpi_calls (for ideapad 14are05 only)."
@@ -11,7 +12,7 @@ license=('GPL3')
 depends=('acpi_call')
 makedepends=('git')
 provides=('battmngr')
-provides=('battmngr')
+provides=(${_name})
 source=("git+$url")
 sha256sums=('SKIP')
 md5sums=("SKIP")
@@ -26,6 +27,6 @@ pkgver() {
 
 package() {
     cd ${_gitname}
-    install -D "vantage" "${pkgdir}/usr/bin/vantage"
+    install -D vantage.sh "${pkgdir}/usr/bin/${_name}"
     install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/${_gitname}/LICENSE"
 }
