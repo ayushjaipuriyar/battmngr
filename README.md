@@ -53,9 +53,6 @@ Make sure open an issue detailing:
 
 I'm actively trying to support more devices and I'm in need of someone willing to point out new models `battmngr` could support and test experimental verions of the script.
 
-Looking to test on:
-- Lenovo IdeaPad Flex 5 14are05/14alc05 (experiemental_support, reported working on 82LM* devices)
-
 ## Note
 When in configuration:
 - Rapid Charge Off
