@@ -1,25 +1,31 @@
 # Maintainer: Ayush Jaipuriyar <ayushjaipuriyar21@gmail.com>
 pkgname=battmngr-14are05-git
-pkgver=1
+_gitname=battmngr
+pkgver=22__2022.08.24
 pkgrel=1
 pkgdesc="Battery manager to handle system performance modes and charge modes 
         through acpi_calls (for ideapad 14are05 only)."
-url="https://github.com/ayushjaipuriyar/battmngr"
+url="https://github.com/ayushjaipuriyar/${_gitname}"
 arch=('x86_64')
 license=('GPL3')
 depends=('acpi_call')
 makedepends=('git')
-provides=("${pkgname}")
+provides=('battmngr')
+provides=('battmngr')
 source=("git+$url")
 sha256sums=('SKIP')
+md5sums=("SKIP")
 
 pkgver() {
-    cd ${pkgname}
-    printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+    cd ${_gitname}
+    _tag=$(git describe --tags | sed 's:^v::') # tag is mobile, and switches between numbers and letters, can't use it for versioning
+    _commits=$(git rev-list --count HEAD) # total commits is the most sane way of getting incremental pkgver
+    _date=$(git log -1 --date=short --pretty=format:%cd)
+    printf "%s_%s_%s\n" "${_commits}" "${_tag}" "${_date}" | sed 's/-/./g'
 }
 
 package() {
-    cd ${pkgname}
-    install -D "${pkgname}" "${pkgdir}/usr/bin/${pkgname}"
-    install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+    cd ${_gitname}
+    install -D "${_gitname}" "${pkgdir}/usr/bin/${_gitname}"
+    install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/${_gitname}/LICENSE"
 }
