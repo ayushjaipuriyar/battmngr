@@ -1,13 +1,13 @@
 # battmngr
 ![made for ideapad](https://img.shields.io/badge/made%20for-ideapad-blue) ![license](https://img.shields.io/github/license/0xless/battmngr) 
 
-Battery manager to handle system performance modes and charge modes through acpi_calls (for ideapad 15are05/14are05/14alc05). 
+Battery manager to handle system performance modes and charge modes through acpi_calls (for ideapad 14are05). 
 
 ![demo](img/demo.gif)
 
 ## Motivation
 
-On Windows native software to support battery and performance operations exist, on GNU/Linux, it's possible to handle system performance modes and battery charge modes making `acpi_calls` [manually](https://wiki.archlinux.org/index.php/Lenovo_IdeaPad_5_15are05#Power_management). This script makes it easy to manage such operations.
+On Windows native software to support battery and performance operations exist, on GNU/Linux, it's possible to handle system performance modes and battery charge modes making `acpi_calls` [manually](https://wiki.archlinux.org/title/Lenovo_IdeaPad_5_14are05#Power_management). This script makes it easy to manage such operations.
 
 ## Getting started
 
@@ -69,7 +69,7 @@ It's possible to activate both Rapid Charge and Battery Conservation modes start
 
 and issuing the command `battmngr -sc 3`  
 This configuration is not obtainable using official lenovo software and should be avoided.  
-Check here for more: https://wiki.archlinux.org/title/Lenovo_IdeaPad_5_15are05#Note
+Check here for more: https://wiki.archlinux.org/title/Lenovo_IdeaPad_5_14are05#Note
 
 ## License
 
