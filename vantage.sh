@@ -2,7 +2,7 @@
 #
 # Read/Set battery modes in lenovo ideapad 15are05 using acpi_call kernel module
 
-## Usage: battmngr [OPTION] MODE
+## Usage: vantage [OPTION] MODE
 ## Options:
 ##	-r, --read		read current battery mode
 ##	-s, --set		set battery mode
@@ -20,11 +20,11 @@
 ##	4	Battery Conservation Off
 ##
 ## Examples:
-## 	battmngr -r
-## 	battmngr -s 1
-##	battmngr -rc
-##	battmngr -sc 1
-##	battmngr -s 1 -r -sc 4 -rc
+## 	vantage -r
+## 	vantage -s 1
+##	vantage -rc
+##	vantage -sc 1
+##	vantage -s 1 -r -sc 4 -rc
 
 #######################################
 # Print error messages to STDERR.
@@ -51,7 +51,7 @@ err() {
 usage() {
 	printf '%s\n' \
 		"" \
-		"Usage: battmngr [OPTION...] MODE" \
+		"Usage: vantage [OPTION...] MODE" \
 		"Options:" \
 		"        -r, --read             read current battery mode" \
 		"        -s, --set              set battery mode" \
@@ -67,11 +67,11 @@ usage() {
 		"        3        Battery Conservation On" \
 		"        4        Battery Conservation Off" \
 		"Examples:" \
-		"        battmngr -r " \
-		"        battmngr -s 1" \
-		"        battmngr -rc" \
-		"        battmngr -sc 1" \
-		"        battmngr -s 1 -r -sc 4 -rc"
+		"        vantage -r " \
+		"        vantage -s 1" \
+		"        vantage -rc" \
+		"        vantage -sc 1" \
+		"        vantage -s 1 -r -sc 4 -rc"
 }
 
 #######################################
@@ -321,7 +321,7 @@ function read_operation() {
 function read_charge_operation() {
 	# rapid charge check
 	echo '\_SB.PCI0.LPC0.EC0.FCGM' >/proc/acpi/call
-	check=$(cut -d '' -f1 </proc/acpi/call)
+	check=$(cat /proc/acpi/call | cut -d '' -f1)
 
 	case $check in
 
@@ -340,7 +340,7 @@ function read_charge_operation() {
 
 	# battery conservation check
 	echo '\_SB.PCI0.LPC0.EC0.BTSG' >/proc/acpi/call
-	check=$(cut -d '' -f1 </proc/acpi/call)
+	check=$(cat /proc/acpi/call | cut -d '' -f1)
 
 	case $check in
 
