@@ -1,9 +1,9 @@
-# battmngr
+# Vantage for 14are05
 ![made for ideapad](https://img.shields.io/badge/made%20for-ideapad-blue) ![license](https://img.shields.io/github/license/0xless/battmngr) 
 
 Battery manager to handle system performance modes and charge modes through acpi_calls (for ideapad 14are05). 
 
-![demo](img/demo.gif)
+<!-- ![demo](img/demo.gif) -->
 
 ## Motivation
 
