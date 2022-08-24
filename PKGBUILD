@@ -1,6 +1,6 @@
 # Maintainer: Ayush Jaipuriyar <ayushjaipuriyar21@gmail.com>
-pkgname=battmngr-14are05-git
-_gitname=battmngr
+pkgname=vantage-14are05-git
+_gitname=vantage-14are05
 pkgver=22__2022.08.24
 pkgrel=1
 pkgdesc="Battery manager to handle system performance modes and charge modes 
