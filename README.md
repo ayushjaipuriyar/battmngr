@@ -46,6 +46,22 @@ Examples:
         vantage -s 1 -r -sc 4 -rc
 ```
 
+## Sudo
+
+Since this requires sudo always , the dumb way to make it easier to use, is add the following line to your sudoers file
+
+```sh
+sudo visudo
+##add the next line to the end of the file
+$USER ALL=(ALL) NOPASSWD: /usr/bin/vantage
+```
+
+### Note
+
+$USER variable doesnt work in sudoers file by default
+Hence you need to change it to your username
+If someone knows how to have the variables accessible in sudoers file , please tell me
+
 ## Contributing
 
 ⚠️**Looking for testers**⚠️ - do you want to use `vantage` on your acpi_calls supported laptop?
@@ -71,7 +87,8 @@ It's possible to activate both Rapid Charge and Battery Conservation modes start
 - Battery Conservation Off
 
 and issuing the command `vantage -sc 3`  
-This configuration is not obtainable using official lenovo software and should be avoided.  
+This configuration is not obtainable using official lenovo software and should be avoided.
+
 Check here for more: https://wiki.archlinux.org/title/Lenovo_IdeaPad_5_14are05#Note
 
 ## License
