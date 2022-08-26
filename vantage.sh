@@ -242,6 +242,9 @@ function set_charge_operation() {
 		# Rapid Charge On
 		echo '\_SB.PCI0.LPC0.EC0.VPC0.SBMC 0x07' >/proc/acpi/call
 		check_charge_mode 0 "0x1"
+		echo '\_SB.PCI0.LPC0.EC0.VPC0.SBMC 0x05' >/proc/acpi/call
+		check_charge_mode 1 "0x0"
+
 		;;
 
 	2)
@@ -254,6 +257,8 @@ function set_charge_operation() {
 		# Battery Conservation On
 		echo '\_SB.PCI0.LPC0.EC0.VPC0.SBMC 0x03' >/proc/acpi/call
 		check_charge_mode 1 "0x1"
+		echo '\_SB.PCI0.LPC0.EC0.VPC0.SBMC 0x08' >/proc/acpi/call
+		check_charge_mode 0 "0x0"
 		;;
 
 	4)
