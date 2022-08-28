@@ -1,6 +1,6 @@
 # Vantage for 14are05
 
-![made for ideapad](https://img.shields.io/badge/made%20for-ideapad-blue) ![license](https://img.shields.io/github/license/0xless/vantage)
+![made for ideapad](https://img.shields.io/badge/made%20for-ideapad-blue) ![license](https://img.shields.io/github/license/ayushjaipuriyar/vantage-14are05)
 
 Battery manager to handle system performance modes and charge modes through acpi_calls (for ideapad 14are05).
 
